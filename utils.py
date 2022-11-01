@@ -1,15 +1,6 @@
 import json
-from classes import *
-from db import db
-from app import app
-
-
-def get_users_all(path="data/users.json"):
-
-    with open(path, 'r', encoding='utf-8') as file:
-        users = json.load(file)
-
-    return users
+from classes import User, Offer, Order
+from db import db, app
 
 
 def get_users_all(path="data/users.json"):
@@ -82,3 +73,4 @@ def init_database():
 
         db.session.add(new_offer)
         db.session.commit()
+
